@@ -4,7 +4,9 @@ import { cn } from "@/lib/utils";
 
 const ArabicName = () => {
     return (
-        <motion.div className={cn("justify-center")}>
+        <motion.div
+            className={cn("justify-center 2xl:scale-75 2xl:-mt-18 xl:-mt-20")}
+        >
             <svg
                 width="100%"
                 height="100%"
@@ -20,7 +22,7 @@ const ArabicName = () => {
                     fontSize="7vh" // Using viewport width for scaling
                     fontFamily="'Cairo', sans-serif" // Change to the desired font
                     className={cn(
-                        "fill-current container mx-auto text-white font-cairo"
+                        "fill-current container mx-auto text-white font-cairoPlay"
                     )}
                 >
                     رامي

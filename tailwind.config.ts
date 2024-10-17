@@ -21,7 +21,8 @@ const config = {
         extend: {
             fontFamily: {
                 sans: ["var(--font-sans)", ...fontFamily.sans],
-                cairo: ['"Cairo Play"', 'sans-serif'], 
+                cairoPlay: ['"Cairo Play"', "sans-serif"],
+                cairo: ["Cairo", "sans-serif"],
             },
             colors: {
                 border: "hsl(var(--border))",
