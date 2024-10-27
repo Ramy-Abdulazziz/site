@@ -15,12 +15,11 @@ export default function Home() {
                 }}
             >
                 <Nav />
-                <Separator />
             </div>
             <MovingName />
             <div
                 className={cn(
-                    "container mx-auto 2xl:max-w-3xl xl:max-w-3xl lg:max-w-2xl sm:max-w-lg xs:max-w-md max-w-xl px-4 py-8 lg:-mt-12 2xl:-mt-12 2xl:py-2"
+                    "container mx-auto 2xl:max-w-3xl xl:max-w-3xl lg:max-w-2xl sm:max-w-lg xs:max-w-sm max-w-xl px-4 py-8 lg:-mt-12 2xl:-mt-12 2xl:py-2"
                 )}
             >
                 <AboutSection />

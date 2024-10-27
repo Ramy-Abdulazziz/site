@@ -6,10 +6,7 @@ import { cn } from "@/lib/utils";
 
 const EnglishName = () => {
     return (
-        <motion.div
-            className={cn("justify-center")}
-
-        >
+        <motion.div className={cn("justify-center")}>
             <svg
                 width="100%"
                 height="100%"

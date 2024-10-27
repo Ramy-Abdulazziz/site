@@ -1,7 +1,6 @@
 "use client";
 
 import * as motion from "framer-motion/client";
-import EnglishName from "./english-name";
 import ArabicName from "./arabic-name";
 import "@fontsource-variable/cairo-play";
 import { cn } from "@/lib/utils";
