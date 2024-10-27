@@ -5,8 +5,12 @@ import { cva } from "class-variance-authority";
 
 const AboutSection = () => {
     return (
-        <motion.div className={cn("text-justify")}>
+        <motion.div>
             <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 1 }}
+                viewport={{ once: true }}
                 className={cn(
                     "xl:text-3xl lg:text-3xl md:text-2xl sm:text-xl xs:text-lg font-cairo mb-6"
                 )}
@@ -14,6 +18,10 @@ const AboutSection = () => {
                 Ramy Abdulazziz • رامي عبدالعزيز
             </motion.div>
             <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 1 }}
+                viewport={{ once: true }}
                 className={cn(
                     "font-cairo xl:text-xl lg:text-lg md:text-base sm:text-base xs:text-xs"
                 )}
@@ -25,6 +33,10 @@ const AboutSection = () => {
                 M.S. in Computer Science program.
             </motion.div>
             <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 1 }}
+                viewport={{ once: true }}
                 className={cn(
                     "justify font-cairo xl:text-xl lg:text-lg md:text-base sm:text-sm xs:text-xs mt-6"
                 )}
