@@ -1,8 +1,5 @@
 import * as motion from "framer-motion/client";
-import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
-import { cva } from "class-variance-authority";
-import { Viewport } from "@radix-ui/react-navigation-menu";
 
 const textContainer = {
     hidden: { opacity: 0 },
@@ -73,9 +70,9 @@ const AboutSection = () => {
                     )}
                 >
                     I'm based in NY and when I'm not coding, you can find me
-                    enjoying life with my fiance Shazia. Feel free to reach out
-                    with project ideas, new opportunities, or to learn more
-                    about me.
+                    enjoying life with my fiance Shazia, and climbing the ladder
+                    in Showdown. Feel free to reach out with project ideas, new
+                    opportunities, or to learn more about me.
                 </motion.div>
             </motion.div>
         </motion.div>

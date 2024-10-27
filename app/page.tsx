@@ -1,4 +1,5 @@
 import AboutSection from "@/components/about";
+import InfoSection from "@/components/info-section";
 import MovingName from "@/components/moving-name";
 import Nav from "@/components/nav";
 import TextSection from "@/components/text-section";
@@ -24,6 +25,7 @@ export default function Home() {
             >
                 <AboutSection />
                 <Separator className={cn("mt-6 mb-6")} />
+                <InfoSection/>
             </div>
         </>
     );
