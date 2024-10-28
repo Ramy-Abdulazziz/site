@@ -26,13 +26,13 @@ const textItem = {
 
 const AboutSection = () => {
     return (
-        <motion.div id="about-me" className={cn("text-justify")}>
+        <motion.div className={cn("text-justify")}>
             <motion.div
                 className={cn(
                     "xl:text-3xl lg:text-3xl md:text-2xl sm:text-xl xs:text-lg font-cairo mb-6"
                 )}
             >
-                Ramy Abdulazziz • رامي عبدالعزيز
+                ramy abdulazziz • رامي عبدالعزيز
             </motion.div>
             <motion.div
                 variants={textContainer}
