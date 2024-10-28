@@ -58,7 +58,7 @@ const InfoSection = () => {
                     "xl:text-2xl lg:text-xl md:text-lg sm:text-lg xs:text-lg font-cairo mb-6"
                 )}
             >
-                <motion.div>Projects</motion.div>
+                <motion.div>projects</motion.div>
             </motion.div>
             <motion.div
                 className={cn(
