@@ -55,7 +55,7 @@ const Mylinks = () => {
             <motion.div
                 variants={textItem}
                 className={cn(
-                    "group flex flex-1 list-none items-center justify-left space-x-6"
+                    "group flex flex-1 list-none items-center justify-left space-x-6 font-cairo xl:text-base lg:text-base md:text-base sm:text-base xs:text-base"
                 )}
             >
                 {Object.entries(links).map(([key, link]) => (
