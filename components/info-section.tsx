@@ -20,7 +20,10 @@ const InfoSection = () => {
                 className={cn(
                     "font-cairo xl:text-base lg:text-base md:text-base sm:text-base xs:text-base"
                 )}
-            ></motion.div>
+            >
+
+                Here is some info about me
+            </motion.div>
         </motion.div>
     );
 };

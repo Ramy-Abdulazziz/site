@@ -7,6 +7,7 @@
 
 @layer base {
     :root {
+        --font-sans: 'Inter', sans-serif; /* Add this line */
         --background: 240 10% 3.9%;
         --foreground: 0 0% 98%;
         --card: 240 10% 3.9%;
@@ -30,6 +31,7 @@
     }
 
     .dark {
+        --font-sans: 'Inter', sans-serif; /* Add this line */
         --background: 240 10% 3.9%;
         --foreground: 0 0% 98%;
         --card: 240 10% 3.9%;
@@ -60,12 +62,3 @@
         @apply bg-background text-foreground;
     }
 }
-
-
-:root {
-    --shadow-bottom: 0 15px 50px -16px rgba(239, 238, 238, 0.647);
-  }
-  
-  .shadow-bottom {
-    box-shadow: var(--shadow-bottom);
-  }

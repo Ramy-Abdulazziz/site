@@ -1,6 +1,6 @@
 import * as motion from "framer-motion/client";
 import ArabicName from "./arabic-name";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import "@fontsource-variable/cairo-play";
 import { cn } from "@/lib/utils";
 
