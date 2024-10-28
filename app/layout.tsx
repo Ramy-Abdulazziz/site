@@ -14,6 +14,22 @@ export const metadata: Metadata = {
     icons: {
         icon: "/ramy_arabic.png",
     },
+    openGraph: {
+        title: "Ramy Abdulazziz",
+        description: "Personal website of Ramy Abdulazziz",
+        url: "https://ramyabdulazziz.dev",
+        siteName: "Ramy Abdulazziz",
+        images: [
+            {
+                url: "https://ramyabdulazziz.dev/ramy_arabic.png", 
+                width: 800,
+                height: 600, 
+                alt: "Ramy in Arabic", 
+            },
+        ],
+        locale: "en_US", 
+        type: "website", 
+    },
 };
 
 export default function RootLayout({
@@ -24,7 +40,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <head>
-                <link rel="icon" type="image/png" href="/ramy_arabic.png"/>
+                <link rel="icon" type="image/png" href="/ramy_arabic.png" />
             </head>
             <body
                 className={cn(
