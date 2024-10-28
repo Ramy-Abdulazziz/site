@@ -46,11 +46,11 @@ const AboutSection = () => {
                         "font-cairo xl:text-base lg:text-base md:text-base sm:text-base xs:text-base"
                     )}
                 >
-                    My passion is leveraging technology to solve complex
+                    {`My passion is leveraging technology to solve complex
                     problems and improve people's lives. I recently graduated
                     from Stony Brook University with my B.S. in Computer Science
                     and Electrical Engineering and am curently enrolled in
-                    Georgia Tech's online M.S. in Computer Science program.
+                    Georgia Tech's online M.S. in Computer Science program.`}
                 </motion.div>
                 <motion.div
                     variants={textItem}
@@ -58,10 +58,10 @@ const AboutSection = () => {
                         "justify font-cairo xl:text-base lg:text-base md:text-base sm:text-base xs:text-base mt-6"
                     )}
                 >
-                    I love digging into the weeds of systems to make
+                    {`I love digging into the weeds of systems to make
                     improvements to developer experiences. I enjoy learning
                     about Operating Systems, Computer Vision, Machine Learning,
-                    and theoretical Computer Science.
+                    and theoretical Computer Science.`}
                 </motion.div>
                 <motion.div
                     variants={textItem}
@@ -69,10 +69,10 @@ const AboutSection = () => {
                         "justify font-cairo xl:text-base lg:text-base md:text-base sm:text-base xs:text-base mt-6"
                     )}
                 >
-                    I'm based in NY and when I'm not coding, you can find me
+                    {`I'm based in NY and when I'm not coding, you can find me
                     enjoying life with my fiance Shazia, and climbing the ladder
                     in Showdown. Feel free to reach out with project ideas, new
-                    opportunities, or to learn more about me.
+                    opportunities, or to learn more about me.`}
                 </motion.div>
             </motion.div>
         </motion.div>
