@@ -30,7 +30,7 @@ const Nav = () => {
             >
                 <NavigationMenuList className={cn("mt-2 mb-2")}>
                     <NavigationMenuItem>
-                        <Link href="/" legacyBehavior passHref>
+                        <Link href="/" target="_blank" legacyBehavior passHref>
                             <NavigationMenuLink>
                                 <div className={cn("relative w-8 h-8 md:w-32")}>
                                     <Image
@@ -60,7 +60,7 @@ const Nav = () => {
                         </Link>
                     </NavigationMenuItem> */}
                     <NavigationMenuItem>
-                        <Link href="/" legacyBehavior passHref>
+                        <Link href="/" target="_blank" legacyBehavior passHref>
                             <NavigationMenuLink
                                 className={navigationMenuTriggerStyle()}
                                 style={{
@@ -89,8 +89,7 @@ const Nav = () => {
                 <div className={cn("flex flex-1 justify-end")}>
                     <Link
                         href="https://github.com/ramy-abdulazziz"
-                        legacyBehavior
-                        passHref
+                        target="_blank"
                     >
                         <div
                             className={cn(
