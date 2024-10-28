@@ -10,13 +10,13 @@ const fontSans = FontSans({
 
 export const metadata: Metadata = {
     title: "Ramy Abdulazziz",
-    description: "Personal Website of Ramy Abdulazziz",
+    description: "Engineer and believer in taking the long way in life.",
     icons: {
         icon: "/ramy_arabic.png",
     },
     openGraph: {
         title: "Ramy Abdulazziz",
-        description: "Personal website of Ramy Abdulazziz",
+        description: "Engineer and believer in taking the long way in life.",
         url: "https://ramyabdulazziz.dev",
         siteName: "Ramy Abdulazziz",
         images: [
