@@ -1,6 +1,7 @@
 import AboutSection from "@/components/about";
 import InfoSection from "@/components/info-section";
 import MovingName from "@/components/moving-name";
+import Mylinks from "@/components/my-links";
 import Nav from "@/components/nav";
 import TextSection from "@/components/text-section";
 import { Separator } from "@/components/ui/separator";
@@ -28,6 +29,8 @@ export default function Home() {
                 </div>
                 <Separator className={cn("mt-6 mb-6")} />
                 <InfoSection />
+                <Separator className={cn("mt-6 mb-6")} />
+                <Mylinks/>
             </div>
         </>
     );
