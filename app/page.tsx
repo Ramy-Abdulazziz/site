@@ -23,9 +23,11 @@ export default function Home() {
                     "container mx-auto 2xl:max-w-3xl xl:max-w-3xl lg:max-w-2xl sm:max-w-lg xs:max-w-sm max-w-xl px-4 py-8 lg:-mt-12 2xl:-mt-12 2xl:py-2"
                 )}
             >
-                <AboutSection />
+                <div id="about-me">
+                    <AboutSection />
+                </div>
                 <Separator className={cn("mt-6 mb-6")} />
-                <InfoSection/>
+                <InfoSection />
             </div>
         </>
     );
