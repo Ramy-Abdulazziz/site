@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 
 const MovingName = () => {
     return (
-        <motion.div className={cn("justify-center")}>
+        <motion.div className={cn("cursor-default select-none justify-center")}>
             <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
