@@ -49,7 +49,7 @@ const AboutSection = () => {
                     {`My passion is leveraging technology to solve complex
                     problems and improve people's lives. I recently graduated
                     from Stony Brook University with my B.S. in Computer Science
-                    and Electrical Engineering and am curently enrolled in
+                    and Electrical Engineering and am currently enrolled in
                     Georgia Tech's online M.S. in Computer Science program.`}
                 </motion.div>
                 <motion.div
