@@ -69,10 +69,7 @@ const AboutSection = () => {
                         "justify font-cairo xl:text-base lg:text-base md:text-base sm:text-base xs:text-base mt-6"
                     )}
                 >
-                    {`I'm based in NY and when I'm not coding, you can find me
-                    enjoying life with my fiance Shazia, and climbing the ladder
-                    in Showdown. Feel free to reach out with project ideas, new
-                    opportunities, or to learn more about me.`}
+                    {`I'm based in NY and when I'm not coding, you can find me climbing the ladder in showdown and enjoying life with my fiancé Shazia. Feel free to reach out with project ideas, new opportunities, or to learn more about me.`}
                 </motion.div>
             </motion.div>
         </motion.div>
