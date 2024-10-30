@@ -30,7 +30,21 @@ export default function Home() {
                 <Separator className={cn("mt-6 mb-6")} />
                 <InfoSection />
                 <Separator className={cn("mt-6 mb-6")} />
-                <Mylinks/>
+                <Mylinks />
+                <Separator className={cn("mt-6 mb-6")} />
+                <div
+                    className={cn(
+                        "text-base min-h-40 font-cairo text-muted-foreground mb-10 md sm:justify-center "
+                    )}
+                >
+                    <div
+                        className={cn(
+                            "mt-10 text-center 2xl:text-left xl:text-left lg:text-left md:text-center sm:text-center"
+                        )}
+                    >
+                        Ramy Abdulazziz
+                    </div>
+                </div>
             </div>
         </>
     );
