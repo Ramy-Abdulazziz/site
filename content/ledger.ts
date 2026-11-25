@@ -12,7 +12,7 @@ export type LedgerRow = {
 export const workRows: LedgerRow[] = [
     {
         id: "optimum",
-        mark: "2025 —",
+        mark: "2025 — present",
         title: "Subscription lifecycle and billing flows",
         context: "Optimum · Software Development Engineer · NYC",
         body: "Go, gRPC and Protobuf APIs behind a subscription model for **4M+ customers**; partner onboarding for Netflix and Starz; fault-tolerant billing flows; test coverage raised to **85%+** on key APIs.",
