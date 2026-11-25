@@ -1,3 +1,5 @@
+import ArabicDisplay from "@/components/arabic-display";
+
 const ledeLead = "Software engineer currently building high performance Go and gRPC services.";
 const ledeRest =
     "I work on distributed services, machine learning, full stack applications, and more.";
@@ -40,15 +42,6 @@ function Facts() {
     );
 }
 
-function LetterDots() {
-    return (
-        <span className="letter-dots" aria-hidden="true">
-            <span />
-            <span />
-        </span>
-    );
-}
-
 export default function Hero() {
     return (
         <section className="hero" aria-label="Introduction">
@@ -73,14 +66,7 @@ export default function Hero() {
                                 Ramy Abdulazziz
                             </h1>
                             <div className="display-col">
-                                <p
-                                    className="arabic-display"
-                                    lang="ar"
-                                    dir="rtl"
-                                >
-                                    رامى
-                                    <LetterDots />
-                                </p>
+                                <ArabicDisplay />
                                 <p className="arabic-full" lang="ar" dir="rtl">
                                     رامي عبدالعزيز
                                 </p>
@@ -95,10 +81,7 @@ export default function Hero() {
 
                     <div className="hero-mobile">
                         <div className="mobile-display-row">
-                            <p className="arabic-display" lang="ar" dir="rtl">
-                                رامى
-                                <LetterDots />
-                            </p>
+                            <ArabicDisplay />
                             <span className="mobile-satr" aria-hidden="true" />
                         </div>
                         <h1 className="latin-name latin-name-mobile">

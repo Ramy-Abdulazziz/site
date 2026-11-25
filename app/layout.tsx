@@ -11,6 +11,7 @@ import { signatureInitScript } from "@/lib/signature";
 import { themeInitScript } from "@/lib/theme";
 
 const description = "Engineer and believer in taking the long way in life.";
+const socialCard = "/og-v2.png?v=2";
 
 const plexSans = IBM_Plex_Sans({
     subsets: ["latin"],
@@ -75,7 +76,7 @@ export const metadata: Metadata = {
         siteName: "Ramy Abdulazziz",
         images: [
             {
-                url: "/og.png",
+                url: socialCard,
                 width: 1200,
                 height: 630,
                 alt: "Ramy Abdulazziz",
@@ -88,7 +89,7 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "Ramy Abdulazziz",
         description,
-        images: ["/og.png"],
+        images: [socialCard],
     },
 };
 
