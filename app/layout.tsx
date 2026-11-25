@@ -7,6 +7,7 @@ import {
 } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import { signatureInitScript } from "@/lib/signature";
 import { themeInitScript } from "@/lib/theme";
 
 const plexSans = IBM_Plex_Sans({
@@ -80,6 +81,9 @@ export default function RootLayout({
         >
             <head>
                 <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+                <script
+                    dangerouslySetInnerHTML={{ __html: signatureInitScript }}
+                />
                 <link rel="icon" type="image/png" href="/ramy_arabic.png" />
             </head>
             <body className="min-h-screen bg-bg font-sans text-body-sm text-text-2 antialiased lg:text-body">

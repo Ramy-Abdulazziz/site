@@ -1,6 +1,6 @@
 import AboutSection from "@/components/about";
+import Hero from "@/components/hero";
 import InfoSection from "@/components/info-section";
-import MovingName from "@/components/moving-name";
 import Mylinks from "@/components/my-links";
 import Nav from "@/components/nav";
 import ThemeToggle from "@/components/theme-toggle";
@@ -12,18 +12,25 @@ export default function Home() {
                 Skip to content
             </a>
             <Nav />
-            <main id="content" className="page-frame pb-16 pt-10 lg:pb-26 lg:pt-16">
-                <MovingName />
-                <div id="about-me" className="mt-16 lg:mt-26">
-                    <AboutSection />
+            <main id="content">
+                <Hero />
+                <div className="page-frame pb-16 pt-16 lg:pb-26 lg:pt-26">
+                    <div id="about" className="scroll-mt-24">
+                        <AboutSection />
+                    </div>
+                    <hr className="my-16 border-0 border-t border-line lg:my-26" />
+                    {/* Existing projects stand in for Work until the ledgers land. */}
+                    <div id="work" className="scroll-mt-24">
+                        <InfoSection />
+                    </div>
+                    <hr className="my-16 border-0 border-t border-line lg:my-26" />
+                    <div id="contact" className="scroll-mt-24">
+                        <Mylinks />
+                    </div>
+                    <p className="mt-16 font-mono text-meta-sm text-text-3 lg:mt-26 lg:text-meta">
+                        Ramy Abdulazziz
+                    </p>
                 </div>
-                <hr className="my-16 border-0 border-t border-line lg:my-26" />
-                <InfoSection />
-                <hr className="my-16 border-0 border-t border-line lg:my-26" />
-                <Mylinks />
-                <p className="mt-16 font-mono text-meta-sm text-text-3 lg:mt-26 lg:text-meta">
-                    Ramy Abdulazziz
-                </p>
             </main>
             <footer className="page-frame border-t border-line py-6">
                 <ThemeToggle />
