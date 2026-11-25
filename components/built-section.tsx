@@ -22,7 +22,7 @@ export default function BuiltSection() {
                 <a
                     href="https://github.com/Ramy-Abdulazziz/ADC_signl_conv"
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
                 >
                     ADC_signl_conv
                 </a>{" "}
@@ -30,7 +30,7 @@ export default function BuiltSection() {
                 <a
                     href="https://github.com/Ramy-Abdulazziz/logic_ops"
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
                 >
                     logic_ops
                 </a>{" "}

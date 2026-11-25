@@ -36,7 +36,11 @@ export default function ThemeToggle() {
     }
 
     return (
-        <div className="font-mono text-meta-sm lowercase text-text-3 lg:text-meta">
+        <div
+            className="font-mono text-meta-sm lowercase text-text-3 lg:text-meta"
+            role="group"
+            aria-label="Theme"
+        >
             <button
                 type="button"
                 className="theme-dark"

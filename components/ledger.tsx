@@ -36,7 +36,7 @@ export default function Ledger({ rows }: { rows: LedgerRow[] }) {
                         href={row.href}
                         className="ledger-row"
                         {...(row.external
-                            ? { target: "_blank", rel: "noreferrer" }
+                            ? { target: "_blank", rel: "noopener noreferrer" }
                             : {})}
                     >
                         <RowBody row={row} />

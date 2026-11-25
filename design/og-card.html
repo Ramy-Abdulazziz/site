@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Ramy Abdulazziz</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&amp;family=IBM+Plex+Sans:wght@500&amp;display=swap">
+  <style>
+    @font-face {
+      font-family: "Reem Kufi";
+      src: url("../fonts/ReemKufi-Ramy.woff2") format("woff2");
+      font-weight: 500;
+      font-display: block;
+    }
+
+    html,
+    body {
+      margin: 0;
+      width: 1200px;
+      height: 630px;
+      background: #0b0b0c;
+      color: #ededef;
+    }
+
+    body {
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 72px 80px 80px;
+    }
+
+    .kicker {
+      margin: 0 0 28px;
+      color: #7c7c82;
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
+      font-size: 20px;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      line-height: 1.4;
+      text-transform: uppercase;
+    }
+
+    .row {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 48px;
+    }
+
+    h1 {
+      margin: 0;
+      color: #ededef;
+      font-family: "IBM Plex Sans", sans-serif;
+      font-size: 76px;
+      font-weight: 500;
+      letter-spacing: -0.035em;
+      line-height: 1;
+    }
+
+    .ar {
+      position: relative;
+      margin: 0;
+      color: #ededef;
+      font-family: "Reem Kufi", sans-serif;
+      font-size: 188px;
+      font-weight: 500;
+      line-height: 0.72;
+    }
+
+    .dots {
+      position: absolute;
+      bottom: 0.1em;
+      left: 0.06em;
+      display: flex;
+      gap: 0.04em;
+    }
+
+    .dots i {
+      display: block;
+      width: 0.065em;
+      height: 0.065em;
+      background: #d63f38;
+      transform: rotate(45deg);
+    }
+
+    .satr {
+      height: 1px;
+      margin-top: 52px;
+      background: #2e2e32;
+    }
+  </style>
+</head>
+<body>
+  <p class="kicker">software engineer · nyc</p>
+  <div class="row">
+    <h1>Ramy Abdulazziz</h1>
+    <p class="ar" lang="ar" dir="rtl">رامى<span class="dots" aria-hidden="true"><i></i><i></i></span></p>
+  </div>
+  <div class="satr" aria-hidden="true"></div>
+</body>
+</html>

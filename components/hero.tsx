@@ -132,7 +132,7 @@ export default function Hero() {
                                 className="hero-btn"
                                 href="https://github.com/ramy-abdulazziz"
                                 target="_blank"
-                                rel="noreferrer"
+                                rel="noopener noreferrer"
                             >
                                 github
                             </a>
@@ -140,7 +140,7 @@ export default function Hero() {
                                 className="hero-btn"
                                 href="https://linkedin.com/in/ramyabdulazziz"
                                 target="_blank"
-                                rel="noreferrer"
+                                rel="noopener noreferrer"
                             >
                                 linkedin
                             </a>
