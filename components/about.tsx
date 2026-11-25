@@ -16,9 +16,7 @@ const AboutSection = () => {
                     My passion is leveraging technology to solve complex
                     problems and improve people&apos;s lives. I recently
                     graduated from Stony Brook University with my B.S. in
-                    Computer Science and Electrical Engineering and am currently
-                    enrolled in Georgia Tech&apos;s online M.S. in Computer
-                    Science program.
+                    Computer Science and Electrical Engineering.
                 </p>
                 <p>
                     I love digging into the weeds of systems to make
