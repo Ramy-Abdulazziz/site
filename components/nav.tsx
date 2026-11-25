@@ -16,6 +16,7 @@ const Nav = () => {
                         alt=""
                         width={400}
                         height={300}
+                        priority
                         className="signature-mark h-10 w-auto origin-center -rotate-[8deg] md:h-14"
                     />
                 </Link>
