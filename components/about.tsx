@@ -14,9 +14,7 @@ export default function AboutSection() {
                     work from distributed services down to kernels and
                     hardware. I&apos;m based in NYC.
                 </p>
-                <span lang="ar" dir="rtl" className="about-pull">
-                    رامي
-                </span>
+              
             </div>
             <div className="about-rest">
                 <p>

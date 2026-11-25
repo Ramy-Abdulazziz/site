@@ -221,6 +221,7 @@ html.signature-seen .signature-link {
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
@@ -284,7 +285,7 @@ html.signature-seen .signature-link {
 .menu-list {
     display: flex;
     flex-direction: column;
-    margin-top: 48px;
+        margin-top: 24px;
 }
 
 .menu-row {
@@ -379,6 +380,7 @@ html.signature-seen .signature-link {
     font-size: 150px;
     font-weight: 500;
     line-height: 1;
+    margin-bottom: 15px;
 }
 
 .letter-dots {
@@ -494,6 +496,7 @@ html.signature-seen .signature-link {
         display: block;
         position: absolute;
         inset: 0;
+        z-index: 0;
         pointer-events: none;
     }
 
@@ -510,6 +513,8 @@ html.signature-seen .signature-link {
     }
 
     .hero-desktop {
+        position: relative;
+        z-index: 1;
         display: flex;
         flex-direction: column;
         min-height: calc(100svh - 88px);
@@ -558,7 +563,7 @@ html.signature-seen .signature-link {
         width: 100cqi;
         height: 1px;
         background: var(--line-strong);
-        z-index: 0;
+        z-index: -1;
     }
 
     .display-col {
@@ -617,8 +622,9 @@ html.signature-seen .signature-link {
         display: grid;
         grid-template-columns: max-content minmax(0, 1fr);
         gap: 64px;
-        margin-top: auto;
-        padding-top: 45px;
+        margin-top: 35px;
+        margin-bottom: auto;
+        padding-top: 0;
     }
 
     .fact-label {
@@ -812,16 +818,10 @@ a.ledger-row:focus-visible .ledger-stack {
 
 .about-lead,
 .about-rest {
+    margin-top: 24px;
     color: var(--text-2);
     font-size: 16px;
     line-height: 1.55;
-}
-
-.about-lead {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: 8px;
-    margin-top: 24px;
 }
 
 .about-lead p,
@@ -829,11 +829,7 @@ a.ledger-row:focus-visible .ledger-stack {
     margin: 0;
 }
 
-.about-rest {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    max-width: 66ch;
+.about-rest p + p {
     margin-top: 24px;
 }
 
@@ -919,6 +915,16 @@ a.ledger-row:focus-visible .ledger-stack {
 .colophon p {
     margin: 0 0 8px;
     max-width: 500px;
+}
+
+.row-body,
+.about-lead p,
+.about-rest p,
+.colophon p {
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphenate-limit-chars: 6 3 2;
 }
 
 .placeholder {
@@ -1102,6 +1108,8 @@ a.ledger-row:focus-visible .ledger-stack {
     line-height: 1.6;
 }
 
+
+
 @media (min-width: 1024px) {
     .sections {
         gap: 104px;
@@ -1152,21 +1160,10 @@ a.ledger-row:focus-visible .ledger-stack {
         line-height: 1.6;
     }
 
-    .about-lead {
-        grid-template-columns: minmax(0, 7fr) minmax(80px, 5fr);
-        column-gap: 24px;
-        align-items: baseline;
-    }
-
-    .about-lead p,
+    .about-lead,
     .about-rest {
         font-size: 17px;
         line-height: 1.6;
-    }
-
-    .about-rest {
-        max-width: none;
-        width: calc(7 / 12 * 100% - 12px);
     }
 
     .about-pull {
