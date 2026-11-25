@@ -1,39 +1,223 @@
+"use client";
+
+import { useEffect, useId, useLayoutEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import Image from "next/image";
 import Link from "next/link";
 import ramy from "@/public/ramy.svg";
 
-const Nav = () => {
+const sections = [
+    { id: "work", href: "#work", label: "work", arabic: "عمل" },
+    { id: "built", href: "#work", label: "built", arabic: "صنع" },
+    { id: "about", href: "#about", label: "about", arabic: "عنّي" },
+    { id: "contact", href: "#contact", label: "contact", arabic: "تواصل" },
+] as const;
+
+const desktopLinks = [
+    ...sections.slice(0, 3),
+    { id: "resume", href: "/resume", label: "résumé", arabic: "" },
+    sections[3],
+];
+
+function Signature() {
     return (
-        <header className="sticky top-0 z-50 border-b border-line bg-bg/80 backdrop-blur-md">
-            <div className="page-frame flex items-center gap-6 py-2">
-                <Link
-                    href="/"
-                    aria-label="Ramy Abdulazziz, home"
-                    className="inline-flex shrink-0"
-                >
-                    <Image
-                        src={ramy}
-                        alt=""
-                        width={400}
-                        height={300}
-                        priority
-                        className="signature-mark h-10 w-auto origin-center -rotate-[8deg] md:h-14"
+        <Link
+            href="/"
+            aria-label="Ramy Abdulazziz, home"
+            className="signature-link"
+        >
+            <span className="signature-crop">
+                <Image
+                    src={ramy}
+                    alt=""
+                    width={400}
+                    height={300}
+                    priority
+                    className="signature-mark"
+                />
+            </span>
+        </Link>
+    );
+}
+
+export default function Nav() {
+    const [open, setOpen] = useState(false);
+    const [current, setCurrent] = useState<string | null>(null);
+    const [dotX, setDotX] = useState(0);
+    const [dotOn, setDotOn] = useState(false);
+    const listRef = useRef<HTMLDivElement>(null);
+    const linkRefs = useRef<Record<string, HTMLAnchorElement | null>>({});
+    const menuButtonRef = useRef<HTMLButtonElement>(null);
+    const closeButtonRef = useRef<HTMLButtonElement>(null);
+    const dialogId = useId();
+
+    useEffect(() => {
+        const nodes = ["work", "built", "about", "contact"]
+            .map((id) => document.getElementById(id))
+            .filter((node): node is HTMLElement => node !== null);
+        if (nodes.length === 0) {
+            return;
+        }
+        const visible = new Map<string, number>();
+        const observer = new IntersectionObserver(
+            (entries) => {
+                for (const entry of entries) {
+                    if (entry.isIntersecting) {
+                        visible.set(entry.target.id, entry.intersectionRatio);
+                    } else {
+                        visible.delete(entry.target.id);
+                    }
+                }
+                const best = Array.from(visible.entries()).sort(
+                    (a, b) => b[1] - a[1]
+                )[0];
+                setCurrent(best ? best[0] : null);
+            },
+            { rootMargin: "-30% 0px -55% 0px", threshold: [0.1, 0.25, 0.5] }
+        );
+        nodes.forEach((node) => observer.observe(node));
+        return () => observer.disconnect();
+    }, []);
+
+    useLayoutEffect(() => {
+        const list = listRef.current;
+        const link = current ? linkRefs.current[current] : null;
+        if (!list || !link) {
+            setDotOn(false);
+            return;
+        }
+        const listBox = list.getBoundingClientRect();
+        const linkBox = link.getBoundingClientRect();
+        setDotX(linkBox.left - listBox.left + linkBox.width / 2);
+        setDotOn(true);
+    }, [current]);
+
+    useEffect(() => {
+        const onResize = () => {
+            const list = listRef.current;
+            const link = current ? linkRefs.current[current] : null;
+            if (!list || !link) {
+                return;
+            }
+            const listBox = list.getBoundingClientRect();
+            const linkBox = link.getBoundingClientRect();
+            setDotX(linkBox.left - listBox.left + linkBox.width / 2);
+        };
+        window.addEventListener("resize", onResize);
+        return () => window.removeEventListener("resize", onResize);
+    }, [current]);
+
+    useEffect(() => {
+        if (!open) {
+            return;
+        }
+        const previous = document.body.style.overflow;
+        document.body.style.overflow = "hidden";
+        closeButtonRef.current?.focus();
+        const onKey = (event: KeyboardEvent) => {
+            if (event.key === "Escape") {
+                setOpen(false);
+                menuButtonRef.current?.focus();
+            }
+        };
+        window.addEventListener("keydown", onKey);
+        return () => {
+            document.body.style.overflow = previous;
+            window.removeEventListener("keydown", onKey);
+        };
+    }, [open]);
+
+    return (
+        <header className="site-nav">
+            <div className="page-frame flex items-center gap-6 py-3">
+                <Signature />
+                <div ref={listRef} className="nav-links">
+                    <nav className="flex items-center gap-8" aria-label="Primary">
+                        {desktopLinks.map((item) => (
+                            <a
+                                key={item.id}
+                                href={item.href}
+                                ref={(node) => {
+                                    linkRefs.current[item.id] = node;
+                                }}
+                                aria-current={
+                                    current === item.id ? "true" : undefined
+                                }
+                                className="nav-link"
+                            >
+                                {item.label}
+                            </a>
+                        ))}
+                    </nav>
+                    <span
+                        className="nav-nuqta"
+                        aria-hidden="true"
+                        style={{
+                            transform: `translateX(${dotX}px) translateX(-50%) rotate(45deg)`,
+                            opacity: dotOn ? 1 : 0,
+                        }}
                     />
-                </Link>
-                <nav
-                    aria-label="Primary"
-                    className="flex items-center gap-6 font-mono text-meta-sm lowercase text-text-3 lg:text-meta"
+                </div>
+                <p className="hero-status nav-status">
+                    <span className="rhombus" aria-hidden="true" />
+                    open to new opportunities
+                </p>
+                <button
+                    ref={menuButtonRef}
+                    type="button"
+                    className="menu-button"
+                    aria-expanded={open}
+                    aria-controls={dialogId}
+                    onClick={() => setOpen(true)}
                 >
-                    <a href="#about-me" className="hover:text-text-1">
-                        about
-                    </a>
-                    <a href="#links" className="hover:text-text-1">
-                        connect
-                    </a>
-                </nav>
+                    menu
+                </button>
             </div>
+            {open
+                ? createPortal(
+                      <div
+                          id={dialogId}
+                          className="menu-sheet"
+                          role="dialog"
+                          aria-modal="true"
+                          aria-label="Menu"
+                      >
+                          <div className="page-frame flex items-center justify-between py-3">
+                              <Signature />
+                              <button
+                                  ref={closeButtonRef}
+                                  type="button"
+                                  className="menu-button"
+                                  onClick={() => {
+                                      setOpen(false);
+                                      menuButtonRef.current?.focus();
+                                  }}
+                              >
+                                  close
+                              </button>
+                          </div>
+                          <nav
+                              className="page-frame menu-list"
+                              aria-label="Sections"
+                          >
+                              {sections.map((item) => (
+                                  <a
+                                      key={item.id}
+                                      href={item.href}
+                                      className="menu-row"
+                                      onClick={() => setOpen(false)}
+                                  >
+                                      <span>{item.label}</span>
+                                      <span lang="ar" dir="rtl">
+                                          {item.arabic}
+                                      </span>
+                                  </a>
+                              ))}
+                          </nav>
+                      </div>,
+                      document.body
+                  )
+                : null}
         </header>
     );
-};
-
-export default Nav;
+}
