@@ -618,7 +618,7 @@ html.signature-seen .signature-link {
         grid-template-columns: max-content minmax(0, 1fr);
         gap: 64px;
         margin-top: auto;
-        padding-top: 64px;
+        padding-top: 45px;
     }
 
     .fact-label {
@@ -918,6 +918,7 @@ a.ledger-row:focus-visible .ledger-stack {
 
 .colophon p {
     margin: 0 0 8px;
+    max-width: 500px;
 }
 
 .placeholder {

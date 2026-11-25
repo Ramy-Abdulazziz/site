@@ -30,22 +30,9 @@ export default function Ledger({ rows }: { rows: LedgerRow[] }) {
     return (
         <div className="ledger">
             {rows.map((row) =>
-                row.href ? (
-                    <a
-                        key={row.id}
-                        href={row.href}
-                        className="ledger-row"
-                        {...(row.external
-                            ? { target: "_blank", rel: "noopener noreferrer" }
-                            : {})}
-                    >
-                        <RowBody row={row} />
-                    </a>
-                ) : (
-                    <div key={row.id} className="ledger-row">
+                   <div key={row.id} className="ledger-row">
                         <RowBody row={row} />
                     </div>
-                )
             )}
         </div>
     );

@@ -1,6 +1,6 @@
-const ledeLead = "Backend engineer currently building Go and gRPC services.";
+const ledeLead = "Software engineer currently building Go and gRPC services.";
 const ledeRest =
-    "I work from distributed services down to kernels and hardware.";
+    "I work on distributed services, machine learning, full stack applications, and more.";
 
 function HeroLinks({ className = "" }: { className?: string }) {
     return (
@@ -114,11 +114,7 @@ export default function Hero() {
                             </p>
                         </div>
                         <Lede />
-                        <p className="hero-status">
-                            <span className="rhombus" aria-hidden="true" />
-                            open to new opportunities
-                        </p>
-                        <div className="hero-actions">
+                       <div className="hero-actions">
                             <a className="hero-btn hero-btn-fill" href="/resume">
                                 résumé ↗
                             </a>

@@ -182,10 +182,6 @@ export default function Nav() {
                         }}
                     />
                 </div>
-                <p className="hero-status nav-status">
-                    <span className="rhombus" aria-hidden="true" />
-                    open to new opportunities
-                </p>
                 <button
                     ref={menuButtonRef}
                     type="button"
@@ -199,48 +195,48 @@ export default function Nav() {
             </div>
             {open
                 ? createPortal(
-                      <div
-                          id={dialogId}
-                          className="menu-sheet"
-                          role="dialog"
-                          aria-modal="true"
-                          aria-label="Menu"
-                      >
-                          <div className="page-frame flex items-center justify-between py-3">
-                              <Signature />
-                              <button
-                                  ref={closeButtonRef}
-                                  type="button"
-                                  className="menu-button"
-                                  onClick={() => {
-                                      setOpen(false);
-                                      menuButtonRef.current?.focus();
-                                  }}
-                              >
-                                  close
-                              </button>
-                          </div>
-                          <nav
-                              className="page-frame menu-list"
-                              aria-label="Sections"
-                          >
-                              {menuSections.map((item) => (
-                                  <a
-                                      key={item.id}
-                                      href={item.href}
-                                      className="menu-row"
-                                      onClick={() => setOpen(false)}
-                                  >
-                                      <span>{item.label}</span>
-                                      <span lang="ar" dir="rtl">
-                                          {item.arabic}
-                                      </span>
-                                  </a>
-                              ))}
-                          </nav>
-                      </div>,
-                      document.body
-                  )
+                    <div
+                        id={dialogId}
+                        className="menu-sheet"
+                        role="dialog"
+                        aria-modal="true"
+                        aria-label="Menu"
+                    >
+                        <div className="page-frame flex items-center justify-between py-3">
+                            <Signature />
+                            <button
+                                ref={closeButtonRef}
+                                type="button"
+                                className="menu-button"
+                                onClick={() => {
+                                    setOpen(false);
+                                    menuButtonRef.current?.focus();
+                                }}
+                            >
+                                close
+                            </button>
+                        </div>
+                        <nav
+                            className="page-frame menu-list"
+                            aria-label="Sections"
+                        >
+                            {menuSections.map((item) => (
+                                <a
+                                    key={item.id}
+                                    href={item.href}
+                                    className="menu-row"
+                                    onClick={() => setOpen(false)}
+                                >
+                                    <span>{item.label}</span>
+                                    <span lang="ar" dir="rtl">
+                                        {item.arabic}
+                                    </span>
+                                </a>
+                            ))}
+                        </nav>
+                    </div>,
+                    document.body
+                )
                 : null}
         </header>
     );

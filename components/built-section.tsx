@@ -16,26 +16,6 @@ export default function BuiltSection() {
                 arabic="صنع"
             />
             <Ledger rows={builtRows} />
-            <p className="ledger-note">
-                Low-level coursework in C and AVR assembly, including the
-                public{" "}
-                <a
-                    href="https://github.com/Ramy-Abdulazziz/ADC_signl_conv"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    ADC_signl_conv
-                </a>{" "}
-                and{" "}
-                <a
-                    href="https://github.com/Ramy-Abdulazziz/logic_ops"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    logic_ops
-                </a>{" "}
-                repositories.
-            </p>
-        </section>
+       </section>
     );
 }
