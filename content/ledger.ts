@@ -78,6 +78,7 @@ export const builtRows: LedgerRow[] = [
         context: "C · KVM",
         body: "vCPU-to-pCPU pinning that balances load and cuts context switches, plus a memory coordinator that protects critical VMs under contention.",
         stack: ["c · kvm"],
+        href: "/built/kvm-scheduler",
     },
     {
         id: "sentiment",
