@@ -1,11 +1,11 @@
-const ledeLead = "Software engineer currently building high performanceGo and gRPC services.";
+const ledeLead = "Software engineer currently building high performance Go and gRPC services.";
 const ledeRest =
     "I work on distributed services, machine learning, full stack applications, and more.";
 
 function HeroLinks({ className = "" }: { className?: string }) {
     return (
         <div className={`hero-links ${className}`}>
-            <a href="#work">read the work ↓</a>
+            <a href="#work">my work ↓</a>
             <a href="/resume">résumé (pdf) ↗</a>
             <a href="mailto:abdulazziz.ramy@gmail.com">
                 abdulazziz.ramy@gmail.com
