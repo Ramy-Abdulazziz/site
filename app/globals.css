@@ -366,7 +366,7 @@ html.signature-seen .signature-link {
     display: block;
     height: 1px;
     margin-top: -40px;
-    margin-bottom: 64px;
+    margin-bottom: 88px;
     background: var(--line-strong);
 }
 
@@ -383,10 +383,12 @@ html.signature-seen .signature-link {
 
 .letter-dots {
     position: absolute;
-    left: 0.08em;
-    bottom: 0.16em;
+    top: calc(100% + 0.08em);
+    left: 0.2em;
     display: flex;
-    gap: 0.045em;
+    gap: 0.05em;
+    transform: translateX(-50%);
+    line-height: 0;
 }
 
 .letter-dots span {
@@ -573,7 +575,7 @@ html.signature-seen .signature-link {
     }
 
     .hero-desktop .arabic-full {
-        margin-top: 36px;
+        margin-top: 72px;
         font-size: 20px;
     }
 
@@ -715,9 +717,8 @@ a.ledger-row:focus-visible {
 }
 
 .ledger-mark {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    position: relative;
+    display: block;
     color: var(--text-3);
     font-size: 12px;
     line-height: 1.4;
@@ -728,9 +729,11 @@ a.ledger-row:focus-visible {
 }
 
 .row-nuqta {
+    position: absolute;
+    top: 0.35em;
+    inset-inline-start: -16px;
     width: 7px;
     height: 7px;
-    flex: none;
     background: var(--nuqta);
     transform: rotate(45deg);
     opacity: 0;
@@ -897,6 +900,12 @@ a.ledger-row:focus-visible .ledger-stack {
     margin: 16px 0 0;
     color: var(--text-3);
     font-size: 13px;
+}
+
+@media (max-width: 1023px) {
+    #contact {
+        display: none;
+    }
 }
 
 .colophon {

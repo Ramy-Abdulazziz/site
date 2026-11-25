@@ -13,6 +13,8 @@ const sections = [
     { id: "contact", href: "#contact", label: "contact", arabic: "تواصل" },
 ] as const;
 
+const menuSections = sections.filter((item) => item.id !== "contact");
+
 const desktopLinks = [
     ...sections.slice(0, 3),
     { id: "resume", href: "/resume", label: "résumé", arabic: "" },
@@ -222,7 +224,7 @@ export default function Nav() {
                               className="page-frame menu-list"
                               aria-label="Sections"
                           >
-                              {sections.map((item) => (
+                              {menuSections.map((item) => (
                                   <a
                                       key={item.id}
                                       href={item.href}
