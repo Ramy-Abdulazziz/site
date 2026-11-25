@@ -1,86 +1,110 @@
 import type { Config } from "tailwindcss";
-const { fontFamily } = require("tailwindcss/defaultTheme");
 
-const config = {
-    darkMode: ["class"],
+const config: Config = {
+    darkMode: "class",
     content: [
-        "./pages/**/*.{ts,tsx}",
-        "./components/**/*.{ts,tsx}",
         "./app/**/*.{ts,tsx}",
-        "./src/**/*.{ts,tsx}",
+        "./components/**/*.{ts,tsx}",
+        "./lib/**/*.{ts,tsx}",
     ],
-    prefix: "",
     theme: {
-        container: {
-            center: true,
-            padding: "2rem",
-            screens: {
-                "2xl": "1400px",
-            },
+        borderRadius: {
+            none: "0px",
+            sm: "0px",
+            DEFAULT: "0px",
+            md: "0px",
+            lg: "0px",
+            xl: "0px",
+            "2xl": "0px",
+            "3xl": "0px",
+            full: "0px",
+        },
+        boxShadow: {
+            none: "none",
+            sm: "none",
+            DEFAULT: "none",
+            md: "none",
+            lg: "none",
+            xl: "none",
+            "2xl": "none",
+            inner: "none",
         },
         extend: {
             fontFamily: {
-                sans: ["var(--font-sans)", ...fontFamily.sans],
-                cairoPlay: ['"Cairo Play"', "sans-serif"],
-                cairo: ["Cairo", "sans-serif"],
+                sans: ["var(--font-plex-sans)", "sans-serif"],
+                mono: ["var(--font-plex-mono)", "ui-monospace", "monospace"],
+                arabic: ["var(--font-plex-arabic)", "sans-serif"],
+                display: ["var(--font-reem-kufi)", "sans-serif"],
             },
             colors: {
-                border: "hsl(var(--border))",
-                input: "hsl(var(--input))",
-                ring: "hsl(var(--ring))",
-                background: "hsl(var(--background))",
-                foreground: "hsl(var(--foreground))",
-                primary: {
-                    DEFAULT: "hsl(var(--primary))",
-                    foreground: "hsl(var(--primary-foreground))",
-                },
-                secondary: {
-                    DEFAULT: "hsl(var(--secondary))",
-                    foreground: "hsl(var(--secondary-foreground))",
-                },
-                destructive: {
-                    DEFAULT: "hsl(var(--destructive))",
-                    foreground: "hsl(var(--destructive-foreground))",
-                },
-                muted: {
-                    DEFAULT: "hsl(var(--muted))",
-                    foreground: "hsl(var(--muted-foreground))",
-                },
-                accent: {
-                    DEFAULT: "hsl(var(--accent))",
-                    foreground: "hsl(var(--accent-foreground))",
-                },
-                popover: {
-                    DEFAULT: "hsl(var(--popover))",
-                    foreground: "hsl(var(--popover-foreground))",
-                },
-                card: {
-                    DEFAULT: "hsl(var(--card))",
-                    foreground: "hsl(var(--card-foreground))",
-                },
+                bg: "var(--bg)",
+                surface: "var(--surface)",
+                line: "var(--line)",
+                "line-strong": "var(--line-strong)",
+                "text-1": "var(--text-1)",
+                "text-2": "var(--text-2)",
+                "text-3": "var(--text-3)",
+                nuqta: "var(--nuqta)",
             },
-            borderRadius: {
-                lg: "var(--radius)",
-                md: "calc(var(--radius) - 2px)",
-                sm: "calc(var(--radius) - 4px)",
+            spacing: {
+                page: "20px",
+                gutter: "24px",
+                section: "104px",
+                "section-sm": "64px",
             },
-            keyframes: {
-                "accordion-down": {
-                    from: { height: "0" },
-                    to: { height: "var(--radix-accordion-content-height)" },
-                },
-                "accordion-up": {
-                    from: { height: "var(--radix-accordion-content-height)" },
-                    to: { height: "0" },
-                },
+            maxWidth: {
+                content: "1280px",
+                frame: "1440px",
             },
-            animation: {
-                "accordion-down": "accordion-down 0.2s ease-out",
-                "accordion-up": "accordion-up 0.2s ease-out",
+            fontSize: {
+                name: [
+                    "76px",
+                    {
+                        lineHeight: "1",
+                        letterSpacing: "-0.035em",
+                        fontWeight: "500",
+                    },
+                ],
+                "name-sm": [
+                    "40px",
+                    {
+                        lineHeight: "1.05",
+                        letterSpacing: "-0.035em",
+                        fontWeight: "500",
+                    },
+                ],
+                display: ["330px", { lineHeight: "1", fontWeight: "500" }],
+                "display-sm": ["150px", { lineHeight: "1", fontWeight: "500" }],
+                section: ["34px", { lineHeight: "1.2", fontWeight: "500" }],
+                "section-sm": [
+                    "24px",
+                    { lineHeight: "1.25", fontWeight: "500" },
+                ],
+                "row-title": ["20px", { lineHeight: "1.3", fontWeight: "500" }],
+                "row-title-sm": [
+                    "18px",
+                    { lineHeight: "1.3", fontWeight: "500" },
+                ],
+                body: ["17px", { lineHeight: "1.6" }],
+                "body-sm": ["16px", { lineHeight: "1.55" }],
+                lede: ["21px", { lineHeight: "1.5" }],
+                "lede-sm": ["17px", { lineHeight: "1.55" }],
+                meta: ["13px", { lineHeight: "1.4" }],
+                "meta-sm": ["12px", { lineHeight: "1.4" }],
+                kicker: [
+                    "12px",
+                    { lineHeight: "1.4", letterSpacing: "0.06em" },
+                ],
+                "kicker-sm": [
+                    "11px",
+                    { lineHeight: "1.4", letterSpacing: "0.06em" },
+                ],
+                "ar-label": ["20px", { lineHeight: "1.7" }],
+                "ar-label-sm": ["16px", { lineHeight: "1.7" }],
             },
         },
     },
-    plugins: [require("tailwindcss-animate")],
-} satisfies Config;
+    plugins: [],
+};
 
 export default config;
