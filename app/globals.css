@@ -707,12 +707,12 @@ html.signature-seen .signature-link {
     text-decoration: none;
 }
 
-a.ledger-row {
+.ledger-row:hover {
     transition: background-color 120ms ease;
 }
 
-a.ledger-row:hover,
-a.ledger-row:focus-visible {
+.ledger-row:hover,
+.ledger-row:focus-visible {
     background: var(--surface);
 }
 
@@ -740,8 +740,8 @@ a.ledger-row:focus-visible {
     transition: opacity 120ms ease;
 }
 
-a.ledger-row:hover .row-nuqta,
-a.ledger-row:focus-visible .row-nuqta {
+.ledger-row:hover .row-nuqta,
+.ledger-row:focus-visible .row-nuqta {
     opacity: 1;
 }
 
@@ -1174,7 +1174,7 @@ a.ledger-row:focus-visible .ledger-stack {
     }
 
     .contact-email {
-        font-size: 34px;
+        font-size: 20px;
         line-height: 1.2;
     }
 }
