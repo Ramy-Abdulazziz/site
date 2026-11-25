@@ -1,79 +1,40 @@
-import * as motion from "framer-motion/client";
-import { cn } from "@/lib/utils";
 import Link from "next/link";
 
-const textContainer = {
-    hidden: { opacity: 0 },
-    show: {
-        opacity: 1,
-        transition: {
-            duration: 1,
-            staggerChildren: 0.25,
-        },
+const links = [
+    {
+        name: "github",
+        href: "https://github.com/ramy-abdulazziz",
     },
-};
-
-const textItem = {
-    hidden: { opacity: 0, y: 5 },
-    show: {
-        opacity: 1,
-        y: 0,
-        transition: {
-            duration: 1,
-            ease: "easeOut",
-        },
+    {
+        name: "linkedin",
+        href: "https://linkedin.com/in/ramyabdulazziz",
     },
-};
-
-const links = {
-    github: {
-        link: "https://github.com/ramy-abdulazziz",
-    },
-    linkedin: {
-        link: "https://linkedin.com/in/ramyabdulazziz",
-    },
-};
+];
 
 const Mylinks = () => {
     return (
-        <motion.div
-            className={cn("text-justify")}
-            id="links"
-            variants={textContainer}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-        >
-            <motion.div
-                variants={textItem}
-                className={cn(
-                    "xl:text-2xl lg:text-xl md:text-lg sm:text-lg xs:text-lg font-cairo mb-6"
-                )}
+        <section id="links" aria-labelledby="links-heading">
+            <h2
+                id="links-heading"
+                className="mb-6 font-sans text-section-sm text-text-1 lg:text-section"
             >
-                <motion.div>links</motion.div>
-            </motion.div>
-            <motion.div
-                variants={textItem}
-                className={cn(
-                    "group flex flex-1 list-none items-center justify-left space-x-6 font-cairo xl:text-base lg:text-base md:text-base sm:text-base xs:text-base"
-                )}
-            >
-                {Object.entries(links).map(([key, link]) => (
-                    <motion.div key={key}>
+                links
+            </h2>
+            <ul className="flex flex-wrap gap-6 font-mono text-meta-sm text-text-3 lg:text-meta">
+                {links.map((link) => (
+                    <li key={link.name}>
                         <Link
-                            href={link.link}
+                            href={link.href}
                             target="_blank"
-                            className={cn(
-                                "underline decoration-gray-500 hover:decoration-white duration-300"
-                            )}
+                            rel="noreferrer"
+                            className="underline decoration-line underline-offset-4 hover:text-text-1 hover:decoration-nuqta"
                         >
-                            {key}
+                            {link.name} ↗
                         </Link>
-                        {"   "}↗
-                    </motion.div>
+                    </li>
                 ))}
-            </motion.div>
-        </motion.div>
+            </ul>
+        </section>
     );
 };
 

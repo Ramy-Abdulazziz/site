@@ -1,68 +1,162 @@
-@import url('https://fonts.googleapis.com/css2?family=Cairo+Play:wght@200..1000&display=swap'); 
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
     :root {
-        --font-sans: 'Inter', sans-serif; /* Add this line */
-        --background: 240 10% 3.9%;
-        --foreground: 0 0% 98%;
-        --card: 240 10% 3.9%;
-        --card-foreground: 0 0% 98%;
-        --popover: 240 10% 3.9%;
-        --popover-foreground: 0 0% 98%;
-        --primary: 0 0% 98%;
-        --primary-foreground: 240 5.9% 10%;
-        --secondary: 240 3.7% 15.9%;
-        --secondary-foreground: 0 0% 98%;
-        --muted: 240 3.7% 15.9%;
-        --muted-foreground: 240 5% 64.9%;
-        --accent: 240 3.7% 15.9%;
-        --accent-foreground: 0 0% 98%;
-        --destructive: 0 62.8% 30.6%;
-        --destructive-foreground: 0 0% 98%;
-        --border: 240 3.7% 15.9%;
-        --input: 240 3.7% 15.9%;
-        --ring: 240 4.9% 83.9%;
-        --radius: 0.5rem;
+        --bg: #f5f3ee;
+        --surface: #edeae3;
+        --line: #ddd8ce;
+        --line-strong: #cfc9bc;
+        --text-1: #151515;
+        --text-2: #55534f;
+        --text-3: #6e6a63;
+        --nuqta: #c4372f;
+        --space-1: 4px;
+        --space-2: 8px;
+        --space-3: 16px;
+        --space-4: 24px;
+        --space-5: 40px;
+        --space-6: 64px;
+        --space-7: 104px;
+        --page-margin: 20px;
+        --page-margin-desktop: 80px;
+        --gutter: 24px;
+        --content-max: 1280px;
+        color-scheme: light;
     }
 
     .dark {
-        --font-sans: 'Inter', sans-serif; /* Add this line */
-        --background: 240 10% 3.9%;
-        --foreground: 0 0% 98%;
-        --card: 240 10% 3.9%;
-        --card-foreground: 0 0% 98%;
-        --popover: 240 10% 3.9%;
-        --popover-foreground: 0 0% 98%;
-        --primary: 0 0% 98%;
-        --primary-foreground: 240 5.9% 10%;
-        --secondary: 240 3.7% 15.9%;
-        --secondary-foreground: 0 0% 98%;
-        --muted: 240 3.7% 15.9%;
-        --muted-foreground: 240 5% 64.9%;
-        --accent: 240 3.7% 15.9%;
-        --accent-foreground: 0 0% 98%;
-        --destructive: 0 62.8% 30.6%;
-        --destructive-foreground: 0 0% 98%;
-        --border: 240 3.7% 15.9%;
-        --input: 240 3.7% 15.9%;
-        --ring: 240 4.9% 83.9%;
+        --bg: #0b0b0c;
+        --surface: #111113;
+        --line: #222225;
+        --line-strong: #2e2e32;
+        --text-1: #ededef;
+        --text-2: #a0a0a6;
+        --text-3: #7c7c82;
+        --nuqta: #d63f38;
+        color-scheme: dark;
     }
-}
 
-@layer base {
-    * {
-        @apply border-border;
-    }
-    body {
-        @apply bg-background text-foreground;
-    }
     html {
+        background: var(--bg);
         scroll-behavior: smooth;
     }
+
+    body {
+        background: var(--bg);
+        color: var(--text-2);
+        font-family: var(--font-plex-sans), sans-serif;
+    }
+
+    button,
+    input,
+    textarea,
+    select {
+        border-radius: 0;
+        background: transparent;
+        border: 0;
+        padding: 0;
+        color: inherit;
+        font: inherit;
+        cursor: pointer;
+    }
+
+    ::selection {
+        background: color-mix(in srgb, var(--nuqta) 25%, transparent);
+        color: var(--text-1);
+    }
+
+    :focus {
+        outline: none;
+    }
+
+    :focus-visible {
+        outline: 2px solid var(--text-1);
+        outline-offset: 2px;
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+        position: relative;
+    }
+
+    a:focus-visible::after,
+    button:focus-visible::after {
+        content: "";
+        position: absolute;
+        top: -4px;
+        inset-inline-start: -4px;
+        width: 6px;
+        height: 6px;
+        background: var(--nuqta);
+        transform: rotate(45deg);
+        pointer-events: none;
+    }
+
+    html:not(.dark) .signature-mark {
+        filter: invert(1);
+    }
+
+    html.dark .theme-dark,
+    html:not(.dark) .theme-light {
+        color: var(--text-1);
+    }
+
+    .skip-link {
+        position: absolute;
+        inset-inline-start: 16px;
+        top: 16px;
+        z-index: 100;
+        padding: 8px 16px;
+        background: var(--bg);
+        color: var(--text-1);
+        font-family: var(--font-plex-mono), ui-monospace, monospace;
+        font-size: 13px;
+        transform: translateY(-150%);
+    }
+
+    .skip-link:focus {
+        transform: none;
+    }
 }
 
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* 4 columns on small screens, 12 from the desktop frame. Hero hairlines are later. */
+.column-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    column-gap: var(--gutter);
+}
+
+.page-frame {
+    width: 100%;
+    max-width: calc(var(--content-max) + (var(--page-margin) * 2));
+    margin-inline: auto;
+    padding-inline: var(--page-margin);
+}
+
+@media (min-width: 1024px) {
+    .column-grid {
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+    }
+
+    .page-frame {
+        max-width: calc(var(--content-max) + (var(--page-margin-desktop) * 2));
+        padding-inline: var(--page-margin-desktop);
+    }
+}
