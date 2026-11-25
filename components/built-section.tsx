@@ -2,7 +2,7 @@ import { builtRows } from "@/content/ledger";
 import Ledger from "@/components/ledger";
 import SectionHeading from "@/components/section-heading";
 
-export default function BuiltSection() {
+export default function BuiltSection({sectionIndex}: {sectionIndex: string}) {
     return (
         <section
             id="built"
@@ -10,7 +10,7 @@ export default function BuiltSection() {
             aria-labelledby="built-heading"
         >
             <SectionHeading
-                index="02"
+                index={sectionIndex}
                 id="built-heading"
                 title="Built"
                 arabic="صنع"

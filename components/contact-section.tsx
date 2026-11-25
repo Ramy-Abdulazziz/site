@@ -1,7 +1,7 @@
 import CopyEmail from "@/components/copy-email";
 import SectionHeading from "@/components/section-heading";
 
-export default function ContactSection() {
+export default function ContactSection({sectionIndex}: {sectionIndex: string}) {
     return (
         <section
             id="contact"
@@ -9,7 +9,7 @@ export default function ContactSection() {
             aria-labelledby="contact-heading"
         >
             <SectionHeading
-                index="04"
+                index={sectionIndex}
                 id="contact-heading"
                 title="Contact"
                 arabic="تواصل"

@@ -10,10 +10,10 @@ export default function Home() {
         <Shell>
             <Hero />
             <div className="page-frame sections">
-                <WorkSection />
-                <BuiltSection />
-                <AboutSection />
-                <ContactSection />
+                <AboutSection sectionIndex="01" />
+                <WorkSection sectionIndex="02" />
+                <BuiltSection sectionIndex="03" />
+                <ContactSection sectionIndex="04" />
             </div>
         </Shell>
     );
