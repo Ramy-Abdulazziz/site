@@ -35,8 +35,8 @@ export default function AboutSection() {
                 </p>
                 <p>
                     I&apos;m based in NYC and when I&apos;m not coding, you can
-                    find me climbing the ladder in showdown and enjoying life
-                    with my fiancé Shazia. Feel free to reach out with project
+                    find me playing Pokémon Champions and enjoying life with my
+                    wife Shazia. Feel free to reach out with project
                     ideas, new opportunities, or to learn more about me.
                 </p>
             </div>
