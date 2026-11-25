@@ -637,3 +637,376 @@ html.signature-seen .signature-link {
         line-height: 1.45;
     }
 }
+
+.sections {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+    padding-top: 64px;
+    padding-bottom: 64px;
+}
+
+.section-heading {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: baseline;
+    gap: 16px;
+    margin: 0;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--line-strong);
+}
+
+.section-heading h2 {
+    margin: 0;
+    color: var(--text-1);
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.25;
+}
+
+.section-index,
+.section-arabic,
+.ledger-mark,
+.ledger-stack,
+.row-context,
+.ledger-note,
+.contact-links,
+.contact-place,
+.colophon,
+.placeholder-kicker,
+.copy-email {
+    font-family: var(--font-plex-mono), ui-monospace, monospace;
+}
+
+.section-index {
+    color: var(--text-3);
+    font-size: 12px;
+}
+
+.section-arabic {
+    color: var(--text-3);
+    font-family: var(--font-plex-arabic), sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.ledger {
+    display: flex;
+    flex-direction: column;
+}
+
+.ledger-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--line);
+    color: inherit;
+    text-decoration: none;
+}
+
+a.ledger-row {
+    transition: background-color 120ms ease;
+}
+
+a.ledger-row:hover,
+a.ledger-row:focus-visible {
+    background: var(--surface);
+}
+
+.ledger-mark {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-3);
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.ledger-mark.is-empty {
+    display: none;
+}
+
+.row-nuqta {
+    width: 7px;
+    height: 7px;
+    flex: none;
+    background: var(--nuqta);
+    transform: rotate(45deg);
+    opacity: 0;
+    transition: opacity 120ms ease;
+}
+
+a.ledger-row:hover .row-nuqta,
+a.ledger-row:focus-visible .row-nuqta {
+    opacity: 1;
+}
+
+.ledger-title-block {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.row-title {
+    color: var(--text-1);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+a.ledger-row:hover .row-title,
+a.ledger-row:focus-visible .row-title {
+    text-decoration: underline;
+    text-decoration-color: var(--nuqta);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+}
+
+.row-context {
+    color: var(--text-3);
+    font-family: var(--font-plex-sans), sans-serif;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.row-body {
+    color: var(--text-2);
+    font-size: 16px;
+    line-height: 1.55;
+}
+
+.ledger-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    color: var(--text-3);
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.ledger-note {
+    max-width: 70ch;
+    margin: 16px 0 0;
+    color: var(--text-3);
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.ledger-note a {
+    color: var(--text-1);
+    text-decoration: underline;
+    text-decoration-color: var(--line);
+    text-underline-offset: 3px;
+}
+
+.about-lead,
+.about-rest {
+    color: var(--text-2);
+    font-size: 16px;
+    line-height: 1.55;
+}
+
+.about-lead {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+    margin-top: 24px;
+}
+
+.about-lead p,
+.about-rest p {
+    margin: 0;
+}
+
+.about-rest {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 66ch;
+    margin-top: 24px;
+}
+
+.about-pull {
+    color: var(--text-3);
+    font-family: var(--font-plex-arabic), sans-serif;
+    font-size: 28px;
+    line-height: 1;
+}
+
+.contact-email {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 12px 16px;
+    margin: 24px 0 0;
+    color: var(--text-1);
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1.25;
+}
+
+.contact-email a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.contact-email a:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--nuqta);
+    text-underline-offset: 4px;
+}
+
+.copy-email {
+    color: var(--text-3);
+    font-size: 13px;
+}
+
+.copy-email:hover {
+    color: var(--text-1);
+}
+
+.contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px 24px;
+    margin: 24px 0 0;
+    padding: 0;
+    list-style: none;
+    color: var(--text-1);
+    font-size: 13px;
+}
+
+.contact-links a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.contact-links a:hover {
+    color: var(--nuqta);
+}
+
+.contact-place {
+    margin: 16px 0 0;
+    color: var(--text-3);
+    font-size: 13px;
+}
+
+.colophon {
+    border-top: 1px solid var(--line);
+    padding-block: 24px;
+    color: var(--text-3);
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.colophon p {
+    margin: 0 0 8px;
+}
+
+.placeholder {
+    padding-top: 64px;
+    padding-bottom: 104px;
+}
+
+.placeholder-kicker {
+    margin: 0 0 16px;
+    color: var(--text-3);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.placeholder h1 {
+    margin: 0;
+    color: var(--text-1);
+    font-size: 34px;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.placeholder p:last-child {
+    max-width: 40rem;
+    margin: 24px 0 0;
+    color: var(--text-2);
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+@media (min-width: 1024px) {
+    .sections {
+        gap: 104px;
+        padding-top: 104px;
+        padding-bottom: 104px;
+    }
+
+    .section-heading h2 {
+        font-size: 34px;
+        line-height: 1.2;
+    }
+
+    .section-index {
+        font-size: 13px;
+    }
+
+    .section-arabic {
+        font-size: 20px;
+    }
+
+    .ledger-row {
+        grid-template-columns: 148px minmax(200px, 0.95fr) minmax(240px, 1.25fr) 156px;
+        gap: 24px;
+        align-items: start;
+        padding: 24px 8px;
+        margin-inline: -8px;
+    }
+
+    .ledger-mark,
+    .ledger-stack {
+        font-size: 13px;
+    }
+
+    .ledger-mark.is-empty {
+        display: flex;
+    }
+
+    .ledger-stack {
+        text-align: end;
+    }
+
+    .row-title {
+        font-size: 20px;
+    }
+
+    .row-body {
+        font-size: 17px;
+        line-height: 1.6;
+    }
+
+    .about-lead {
+        grid-template-columns: minmax(0, 7fr) minmax(80px, 5fr);
+        column-gap: 24px;
+        align-items: baseline;
+    }
+
+    .about-lead p,
+    .about-rest {
+        font-size: 17px;
+        line-height: 1.6;
+    }
+
+    .about-rest {
+        max-width: none;
+        width: calc(7 / 12 * 100% - 12px);
+    }
+
+    .about-pull {
+        justify-self: end;
+        font-size: 40px;
+    }
+
+    .contact-email {
+        font-size: 34px;
+        line-height: 1.2;
+    }
+}

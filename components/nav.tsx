@@ -8,7 +8,7 @@ import ramy from "@/public/ramy.svg";
 
 const sections = [
     { id: "work", href: "#work", label: "work", arabic: "عمل" },
-    { id: "built", href: "#work", label: "built", arabic: "صنع" },
+    { id: "built", href: "#built", label: "built", arabic: "صنع" },
     { id: "about", href: "#about", label: "about", arabic: "عنّي" },
     { id: "contact", href: "#contact", label: "contact", arabic: "تواصل" },
 ] as const;

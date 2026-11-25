@@ -1,31 +1,40 @@
-const AboutSection = () => {
+export default function AboutSection() {
     return (
-        <section className="max-w-[66ch]">
-            <p className="mb-6 font-sans text-section-sm text-text-1 lg:text-section">
-                ramy abdulazziz •{" "}
-                <bdi
-                    lang="ar"
-                    dir="rtl"
-                    className="font-arabic text-ar-label-sm font-normal lg:text-ar-label"
-                >
-                    رامي عبدالعزيز
-                </bdi>
-            </p>
-            <div className="space-y-6 text-body-sm text-text-2 lg:text-body">
+        <section id="about" className="scroll-mt-24" aria-labelledby="about-heading">
+            <header className="section-heading">
+                <span className="section-index">03</span>
+                <h2 id="about-heading">About</h2>
+                <span lang="ar" dir="rtl" className="section-arabic">
+                    عنّي
+                </span>
+            </header>
+            <div className="about-lead">
                 <p>
-                    My passion is leveraging technology to solve complex
-                    problems and improve people&apos;s lives. I recently
-                    graduated from Stony Brook University with my B.S. in
+                    Backend engineer currently building Go and gRPC services. I
+                    work from distributed services down to kernels and
+                    hardware. I&apos;m based in NYC.
+                </p>
+                <span lang="ar" dir="rtl" className="about-pull">
+                    رامي
+                </span>
+            </div>
+            <div className="about-rest">
+                <p>
+                    I graduated from Stony Brook in May 2024 with a B.S. in
                     Computer Science and Electrical Engineering.
                 </p>
                 <p>
-                    I love digging into the weeds of systems to make
-                    improvements to developer experiences. I enjoy learning
-                    about Operating Systems, Computer Vision, Machine Learning,
-                    and theoretical Computer Science.
+                    The Arabic on this page is my name,{" "}
+                    <bdi lang="ar" dir="rtl">
+                        رامي
+                    </bdi>
+                    . Before Optimum I
+                    worked on a research model of how people perceive Arabic
+                    letter features, so the script is both heritage and
+                    something I&apos;ve studied.
                 </p>
                 <p>
-                    I&apos;m based in NY and when I&apos;m not coding, you can
+                    I&apos;m based in NYC and when I&apos;m not coding, you can
                     find me climbing the ladder in showdown and enjoying life
                     with my fiancé Shazia. Feel free to reach out with project
                     ideas, new opportunities, or to learn more about me.
@@ -33,6 +42,4 @@ const AboutSection = () => {
             </div>
         </section>
     );
-};
-
-export default AboutSection;
+}
