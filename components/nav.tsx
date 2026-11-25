@@ -7,9 +7,8 @@ import Link from "next/link";
 import ramy from "@/public/ramy.svg";
 
 const sections = [
-    { id: "work", href: "#work", label: "work", arabic: "عمل" },
-    { id: "built", href: "#built", label: "built", arabic: "صنع" },
     { id: "about", href: "#about", label: "about", arabic: "عنّي" },
+    { id: "work", href: "#work", label: "work", arabic: "عمل" },
     { id: "contact", href: "#contact", label: "contact", arabic: "تواصل" },
 ] as const;
 
@@ -18,7 +17,6 @@ const menuSections = sections.filter((item) => item.id !== "contact");
 const desktopLinks = [
     ...sections.slice(0, 3),
     { id: "resume", href: "/resume", label: "résumé", arabic: "" },
-    sections[3],
 ];
 
 function Signature() {

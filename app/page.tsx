@@ -12,8 +12,7 @@ export default function Home() {
             <div className="page-frame sections">
                 <AboutSection sectionIndex="01" />
                 <WorkSection sectionIndex="02" />
-                <BuiltSection sectionIndex="03" />
-                <ContactSection sectionIndex="04" />
+                <ContactSection sectionIndex="03" />
             </div>
         </Shell>
     );

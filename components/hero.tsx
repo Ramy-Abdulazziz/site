@@ -1,4 +1,4 @@
-const ledeLead = "Software engineer currently building Go and gRPC services.";
+const ledeLead = "Software engineer currently building high performanceGo and gRPC services.";
 const ledeRest =
     "I work on distributed services, machine learning, full stack applications, and more.";
 
