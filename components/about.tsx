@@ -1,7 +1,7 @@
 const AboutSection = () => {
     return (
         <section className="max-w-[66ch]">
-            <h1 className="mb-6 font-sans text-section-sm text-text-1 lg:text-section">
+            <p className="mb-6 font-sans text-section-sm text-text-1 lg:text-section">
                 ramy abdulazziz •{" "}
                 <bdi
                     lang="ar"
@@ -10,7 +10,7 @@ const AboutSection = () => {
                 >
                     رامي عبدالعزيز
                 </bdi>
-            </h1>
+            </p>
             <div className="space-y-6 text-body-sm text-text-2 lg:text-body">
                 <p>
                     My passion is leveraging technology to solve complex
