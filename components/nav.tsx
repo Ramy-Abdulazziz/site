@@ -32,7 +32,6 @@ function Signature() {
                     alt=""
                     width={400}
                     height={300}
-                    priority
                     className="signature-mark"
                 />
             </span>
@@ -118,6 +117,29 @@ export default function Nav() {
             if (event.key === "Escape") {
                 setOpen(false);
                 menuButtonRef.current?.focus();
+                return;
+            }
+            if (event.key !== "Tab") {
+                return;
+            }
+            const dialog = document.getElementById(dialogId);
+            if (!dialog) {
+                return;
+            }
+            const focusable = Array.from(
+                dialog.querySelectorAll<HTMLElement>("a[href], button")
+            );
+            const first = focusable[0];
+            const last = focusable[focusable.length - 1];
+            if (!first || !last) {
+                return;
+            }
+            if (event.shiftKey && document.activeElement === first) {
+                event.preventDefault();
+                last.focus();
+            } else if (!event.shiftKey && document.activeElement === last) {
+                event.preventDefault();
+                first.focus();
             }
         };
         window.addEventListener("keydown", onKey);
@@ -125,7 +147,7 @@ export default function Nav() {
             document.body.style.overflow = previous;
             window.removeEventListener("keydown", onKey);
         };
-    }, [open]);
+    }, [dialogId, open]);
 
     return (
         <header className="site-nav">

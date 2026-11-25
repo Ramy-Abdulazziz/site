@@ -11,6 +11,10 @@ export default function CopyEmail() {
         <button
             type="button"
             className="copy-email"
+            aria-live="polite"
+            aria-label={
+                copied ? "Email address copied" : "Copy email address"
+            }
             onClick={async () => {
                 try {
                     await navigator.clipboard.writeText(email);
