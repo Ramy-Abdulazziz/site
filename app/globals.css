@@ -945,6 +945,7 @@ a.ledger-row:focus-visible .ledger-stack {
     margin: 16px 0 0;
     color: var(--text-3);
     font-size: 13px;
+    padding-bottom: 200px;
 }
 
 @media (max-width: 1023px) {
@@ -959,6 +960,7 @@ a.ledger-row:focus-visible .ledger-stack {
     color: var(--text-3);
     font-size: 13px;
     line-height: 1.5;
+    margin-top: 100px;
 }
 
 .colophon p {
